@@ -1,0 +1,91 @@
+#!/bin/bash
+
+function require_brew() {
+  running "brew cask install $1 $2"
+  brew list $1 > /dev/null 2>&1 | true
+  if [[ ${PIPESTATUS[0]} != 0 ]]; then
+    action "brew install $1"
+    brew install $1 $2
+    if [[ $? != 0 ]]; then
+      error "failed to install $1! aborting..."
+      exit -1
+    fi
+  fi
+  ok
+}
+
+function cask_install() {
+  running "brew cask $1"
+  brew cask search $1 > /dev/null 2>&1 | true
+  if [[ ${PIPESTATUS[0]} != 0 ]]; then
+    action "brew cask install $1 $2"
+    brew cask install $1 $2
+    if [[ $? != 0 ]]; then
+      error "failed to install $1! aborting..."
+      exit -1
+    fi
+  fi
+  ok
+}
+
+########## BREW PKGS ##########
+
+running "installing zsh"
+require_brew zsh
+
+running "installing htop"
+require_brew htop
+
+running "installing httpie"
+require_brew httpie
+
+running "installing php-cs-fixer"
+require_brew php-cs-fixer
+
+running "installing autojump"
+require_brew autojump
+
+running "installing composer"
+require_brew composer
+
+running "installing diff-so-fancy"
+require_brew diff-so-fancy
+
+
+########## APPS ###########
+running "installing brew cask"
+brew tap caskroom/cask
+
+#### DEVELOPMENT ####
+yes_or_no "would you like to install iterm?"
+if confirmed; then
+  cask_install iterm2
+fi
+
+#### MEDIA ####
+yes_or_no "would you like to install vlc?"
+if confirmed; then
+  cask_install vlc
+fi
+
+yes_or_no "would you like to install spotify?"
+if confirmed; then
+  cask_install spotify
+fi
+
+#### COMMUNICATION ####
+yes_or_no "would you like to install slack?"
+if confirmed; then
+  cask_install slack
+fi
+
+#### MISC ####
+yes_or_no "would you like to install google chrome?"
+if confirmed; then
+  cask_install google-chrome
+fi
+
+running "cleaning up cask files"
+brew cask cleanup
+
+bot "chosen brew and brew cask packages installed successfully"

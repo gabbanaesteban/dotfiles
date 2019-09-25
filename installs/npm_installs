@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function require_npm() {
+  running "npm $*"
+  npm list -g --depth 0 | grep $1@ > /dev/null
+  if [[ $? != 0 ]]; then
+    action "npm install -g $*"
+    npm install -g $@
+  fi
+  ok
+}
+
+yes_or_no "would you like to install fkill-cli?"
+if confirmed; then
+  require_npm fkill-cli
+fi
+
+yes_or_no "would you like to install fkill-cli?"
+if confirmed; then
+  require_npm fast-cli
+fi
+
+yes_or_no "would you like to install fkill-cli?"
+if confirmed; then
+  require_npm pure-prompt
+fi
+
+bot "your chosen npm packages installed successfully"
