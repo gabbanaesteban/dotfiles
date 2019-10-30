@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/estebandelarosa/.oh-my-zsh
+export ZSH=/Users/gabbanaesteban/.oh-my-zsh
 
 #composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
@@ -124,7 +124,3 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U promptinit; promptinit
 # prompt spaceship
 prompt pure
-
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
