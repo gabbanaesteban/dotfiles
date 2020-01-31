@@ -7,9 +7,6 @@ bot "let's get going! "
 bot "installing osx command line tools"
 xcode-select --install
 
-# set computer info
-set_computer_info
-
 # make dotfiles hidden
 running "hiding dotfiles"
 mv /dotfiles ~/.dotfiles

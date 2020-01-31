@@ -42,23 +42,3 @@ function confirmed() {
   fi
   return 1
 }
-
-function set_computer_info() {
-    echo -e "$COL_MAGENTA Enter your computer name$COL_RESET: "
-    read cpname
-
-    sudo scutil --set ComputerName "$cpname"
-    sudo scutil --set HostName "$cpname"
-    sudo scutil --set LocalHostName "$cpname"
-    defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$cpname"
-}
-
-function set_git_info() {
-  echo -n "\n$COL_MAGENTA set your github username$COL_RESET: "
-  read name
-  echo -n "\n$COL_MAGENTA set your github email$COL_RESET: "
-  read email
-
-  git config --global user.name $name
-  git config --global user.email $email
-}
