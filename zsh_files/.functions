@@ -1,9 +1,5 @@
 #!/bin/bash
 
-function homestead() {
-    ( cd ~/Homestead && vagrant $* )
-}
-
 # clean the current directory
 function clean() {
     read -p "remove everything here? (y/N)" yn
