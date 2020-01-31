@@ -58,12 +58,8 @@ bot "setting zsh as the user shell"
 chsh -s /bin/zsh
 ok
 
-running "sourcing zshrc"
-source ~/.zshrc
-ok
-
 running "sourcing osx defaults"
-source .osx
+source config/.osx
 ok
 
 bot "whooo, all set! "
