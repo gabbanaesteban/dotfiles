@@ -54,11 +54,6 @@ running "select the composer packages you would like to install"
 source installs/.composer_installs
 ok "feel free to add more atom packages! "
 
-# hard link .zshrc
-running "linking your .zshrc!"
-ln ~/.dotfiles/.zshrc ~/.zshrc
-ok
-
 running "downloading oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -67,24 +62,6 @@ if [[ $? != 0 ]]; then
   exit 2
 fi
 ok
-
-# hard link .oh-my-zsh
-running "linking .oh-my-zsh"
-ln ~/.oh-my-zsh ~/.dotfiles/zsh/.oh-my-zsh
-ok
-
-# hard link .gitconfig
-running "linking .gitconfig"
-ln ~/.dotfiles/.gitconfig ~/.gitconfig
-ok
-
-# setup git credentials
-yes_or_no "Would you like to set your git credentials now?"
-if confirmed; then
-  set_git_info
-else
-  bot "ok, but remember to do it before your first commit! "
-fi
 
 bot "setting zsh as the user shell"
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
