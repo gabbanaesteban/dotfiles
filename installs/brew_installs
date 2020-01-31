@@ -98,9 +98,9 @@ if confirmed; then
   cask_install alfred
 fi
 
-yes_or_no "would you like to install spectacle?"
+yes_or_no "would you like to install rectangle?"
 if confirmed; then
-  cask_install spectacle
+  cask_install rectangle
 fi
 
 yes_or_no "would you like to install itsycal?"
