@@ -30,6 +30,9 @@ function cask_install() {
 
 ########## BREW PKGS ##########
 
+running "installing node"
+require_brew node
+
 running "installing htop"
 require_brew htop
 
