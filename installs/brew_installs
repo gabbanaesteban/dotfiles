@@ -48,6 +48,14 @@ require_brew composer
 running "installing diff-so-fancy"
 require_brew diff-so-fancy
 
+running "installing youtube-dl"
+require_brew youtube-dl
+
+running "installing thefuck"
+require_brew thefuck
+
+running "installing mackup"
+require_brew mackup
 
 ########## APPS ###########
 running "installing brew cask"
@@ -80,6 +88,21 @@ fi
 yes_or_no "would you like to install google chrome?"
 if confirmed; then
   cask_install google-chrome
+fi
+
+yes_or_no "would you like to install alfred?"
+if confirmed; then
+  cask_install alfred
+fi
+
+yes_or_no "would you like to install spectacle?"
+if confirmed; then
+  cask_install spectacle
+fi
+
+yes_or_no "would you like to install itsycal?"
+if confirmed; then
+  cask_install itsycal
 fi
 
 running "cleaning up cask files"
