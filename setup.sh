@@ -36,22 +36,22 @@ fi
 ok
 
 running "Select which bundled brew & brew-cask packages you want to install"
-source installs/.brew_installs
+source installs/brew_installs
 ok "feel free to add more brew packages! "
 
 # globally install key npm pkgs
 running "Select which bundled npm modules you want to install"
-source installs/.npm_installs
+source installs/npm_installs
 ok "feel free to add more npm modules! "
 
 # globally install important gems
 running "Select which bundled gems you want to install"
-source installs/.gem_installs
+source installs/gem_installs
 ok "feel free to add more ruby gems! "
 
 #globally install atom packages
 running "select the composer packages you would like to install"
-source installs/.composer_installs
+source installs/composer_installs
 ok "feel free to add more atom packages! "
 
 running "downloading oh-my-zsh"
