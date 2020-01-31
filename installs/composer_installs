@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function require_composer() {
+  running "composer $*"
+  composer global show | grep $1@ > /dev/null
+  if [[ $? != 0 ]]; then
+    action "composer global require $*"
+    composer global require $@
+  fi
+  ok
+}
+
+yes_or_no "would you like to install prestissimo"
+if confirmed; then
+  require_composer hirak/prestissimo
+fi
+
+yes_or_no "would you like to install laravel installer?"
+if confirmed; then
+  require_composer laravel/installer
+fi
