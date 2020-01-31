@@ -26,15 +26,6 @@ brew doctor
 brew update
 ok
 
-# install node
-running "installing node"
-curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
-if [[ $? != 0 ]]; then
-    error "unable to install node -> quitting setup"
-    exit 2
-fi
-ok
-
 running "Select which bundled brew & brew-cask packages you want to install"
 source installs/brew_installs
 ok "feel free to add more brew packages! "
