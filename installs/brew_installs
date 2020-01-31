@@ -108,6 +108,11 @@ if confirmed; then
   cask_install itsycal
 fi
 
+yes_or_no "would you like to install vscode?"
+if confirmed; then
+  cask_install visual-studio-code
+fi
+
 running "cleaning up cask files"
 brew cask cleanup
 
