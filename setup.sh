@@ -50,8 +50,8 @@ source installs/.gem_installs
 ok "feel free to add more ruby gems! "
 
 #globally install atom packages
-running "select the atom packages you would like to install"
-source installs/.apm_installs
+running "select the composer packages you would like to install"
+source installs/.composer_installs
 ok "feel free to add more atom packages! "
 
 # hard link .zshrc
