@@ -64,12 +64,8 @@ fi
 ok
 
 bot "setting zsh as the user shell"
-CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
-if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
-  bot "setting newer homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
-  sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
-  ok
-fi
+chsh -s /bin/zsh
+ok
 
 running "sourcing zshrc"
 source ~/.zshrc
