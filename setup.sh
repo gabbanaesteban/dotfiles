@@ -9,7 +9,7 @@ xcode-select --install
 
 # make dotfiles hidden
 running "hiding dotfiles"
-mv /dotfiles ~/.dotfiles
+mv ~/dotfiles ~/.dotfiles
 ok
 
 # install brew
