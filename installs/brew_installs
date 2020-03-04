@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function require_brew() {
-  running "brew cask install $1 $2"
+  running "brew install $1 $2"
   brew list $1 > /dev/null 2>&1 | true
   if [[ ${PIPESTATUS[0]} != 0 ]]; then
     action "brew install $1"
