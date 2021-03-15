@@ -39,3 +39,8 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
+
+# install a new node version and reinstall global packages
+nvm-install() {
+    nvm install ${1} --reinstall-packages-from=$(nvm current)
+}
