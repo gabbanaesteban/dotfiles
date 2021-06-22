@@ -15,11 +15,11 @@ function require_brew() {
 }
 
 function cask_install() {
-  running "brew cask $1"
-  brew cask search $1 > /dev/null 2>&1 | true
+  running "brew install --casks $1 $2"
+  brew search --casks $1 > /dev/null 2>&1 | true
   if [[ ${PIPESTATUS[0]} != 0 ]]; then
-    action "brew cask install $1 $2"
-    brew cask install $1 $2
+    action "brew install --casks $1"
+    brew install --casks $1 $2
     if [[ $? != 0 ]]; then
       error "failed to install $1! aborting..."
       exit -1
@@ -35,15 +35,7 @@ require_brew htop
 running "installing httpie"
 require_brew httpie
 
-running "installing autojump"
-require_brew autojump
-
-running "installing diff-so-fancy"
-require_brew diff-so-fancy
-
 ########## APPS ###########
-running "installing brew cask"
-brew tap homebrew/cask-cask
 
 #### DEVELOPMENT ####
 yes_or_no "would you like to install iterm?"
@@ -93,8 +85,5 @@ yes_or_no "would you like to install vscode?"
 if confirmed; then
   cask_install visual-studio-code
 fi
-
-running "cleaning up cask files"
-brew cask cleanup
 
 bot "chosen brew and brew cask packages installed successfully"
