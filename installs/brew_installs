@@ -29,36 +29,17 @@ function cask_install() {
 }
 
 ########## BREW PKGS ##########
-
-running "installing node"
-require_brew node
-
 running "installing htop"
 require_brew htop
 
 running "installing httpie"
 require_brew httpie
 
-running "installing php-cs-fixer"
-require_brew php-cs-fixer
-
 running "installing autojump"
 require_brew autojump
 
-running "installing composer"
-require_brew composer
-
 running "installing diff-so-fancy"
 require_brew diff-so-fancy
-
-running "installing youtube-dl"
-require_brew youtube-dl
-
-running "installing thefuck"
-require_brew thefuck
-
-running "installing mackup"
-require_brew mackup
 
 ########## APPS ###########
 running "installing brew cask"
