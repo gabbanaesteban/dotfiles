@@ -25,20 +25,17 @@ running "Select which bundled brew & brew-cask packages you want to install"
 source installs/brew_installs
 ok "feel free to add more brew packages! "
 
+running "downloading nvm"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh)"
+
 # globally install key npm pkgs
 running "Select which bundled npm modules you want to install"
 source installs/npm_installs
 ok "feel free to add more npm modules! "
 
-# globally install important gems
-running "Select which bundled gems you want to install"
-source installs/gem_installs
-ok "feel free to add more ruby gems! "
-
-#globally install atom packages
-running "select the composer packages you would like to install"
-source installs/composer_installs
-ok "feel free to add more atom packages! "
+running "sourcing osx defaults"
+source config/.osx
+ok
 
 running "downloading oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -51,10 +48,6 @@ ok
 
 bot "setting zsh as the user shell"
 chsh -s /bin/zsh
-ok
-
-running "sourcing osx defaults"
-source config/.osx
 ok
 
 # make dotfiles hidden
