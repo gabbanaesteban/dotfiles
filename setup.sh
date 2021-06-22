@@ -7,11 +7,6 @@ bot "let's get going! "
 bot "installing osx command line tools"
 xcode-select --install
 
-# make dotfiles hidden
-running "hiding dotfiles"
-mv ~/dotfiles ~/.dotfiles
-ok
-
 # install brew
 running "installing brew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -60,6 +55,11 @@ ok
 
 running "sourcing osx defaults"
 source config/.osx
+ok
+
+# make dotfiles hidden
+running "hiding dotfiles"
+mv ~/dotfiles ~/.dotfiles
 ok
 
 bot "whooo, all set! "
