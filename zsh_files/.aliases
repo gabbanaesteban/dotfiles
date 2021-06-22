@@ -7,8 +7,6 @@ alias sudo="sudo "
 alias 777='chmod 777'
 alias updatez='source ~/.zshrc'
 
-alias artisan="php artisan "
-
 # Edit
 alias edita='code ~/.aliases'
 alias editz='code ~/.zshrc'
@@ -20,9 +18,6 @@ alias edith='code /etc/hosts'
 
 # Go to
 alias gos='cd ~/.ssh/'
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
 
 # git shortcuts
 alias g='git $1'
@@ -38,26 +33,12 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias perms="stat -c '%a - %n'"
 
-# servers
-alias dealerprod="ssh dealerprod"
-alias dealerstage="ssh dealerstage"
-alias dealerdev="ssh dealerdev"
-alias mc159e="ssh mc159e"
-alias mc159m="ssh mc159m"
-alias hdev="ssh hdev"
-alias hprod="ssh hprod"
 
 # recursively delete .DS_Store
 alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
-# Connect to VM
-alias vm='ssh root@192.168.122.128'
 
 # brew tasks
-alias down='brew services stop $1'
-alias up='brew services start $1'
-alias restart='brew services restart $1'
-
-# docker-compose
-alias docker-up='docker-compose up --build --remove-orphans -d'
-alias docker-dw='docker-compose down'
+alias brew-down='brew services stop $1'
+alias brew-up='brew services start $1'
+alias brew-restart='brew services restart $1'
