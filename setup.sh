@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 source resources.sh
 
+# create a symblink for all zsh files
+ln -sf zsh_files/.* ~/
+
 bot "hello! welcome to your new computer"
 bot "let's get going! "
 
