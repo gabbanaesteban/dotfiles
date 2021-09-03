@@ -37,8 +37,5 @@ alias perms="stat -c '%a - %n'"
 # recursively delete .DS_Store
 alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
-
-# brew tasks
-alias brew-down='brew services stop $1'
-alias brew-up='brew services start $1'
-alias brew-restart='brew services restart $1'
+# php
+alias artisan='php artisan $1'
