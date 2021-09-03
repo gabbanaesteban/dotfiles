@@ -1,9 +1,6 @@
 #!/usr/bin/env zsh
 source resources.sh
 
-# create a symblink for all zsh files
-ln -sf ~/dotfiles/zsh_files/.* ~/
-
 bot "hello! welcome to your new computer"
 bot "let's get going! "
 
@@ -31,6 +28,9 @@ ok "feel free to add more brew packages! "
 running "downloading nvm"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh)"
 
+source zsh_files/.zshrc
+nvm install
+
 # globally install key npm pkgs
 running "Select which bundled npm modules you want to install"
 source installs/npm_installs
@@ -52,5 +52,8 @@ ok
 bot "setting zsh as the user shell"
 chsh -s /bin/zsh
 ok
+
+# create a symblink for all zsh files
+ln -sf ~/dotfiles/zsh_files/.* ~/
 
 bot "whooo, all set! "
