@@ -18,6 +18,7 @@ alias edith='code /etc/hosts'
 
 # Go to
 alias gos='cd ~/.ssh/'
+alias god='cd ~/.dotfiles'
 
 # git shortcuts
 alias g='git $1'
