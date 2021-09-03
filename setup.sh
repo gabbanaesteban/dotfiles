@@ -2,7 +2,7 @@
 source resources.sh
 
 # create a symblink for all zsh files
-ln -sf zsh_files/.* ~/
+ln -sf ~/dotfiles/zsh_files/.* ~/
 
 bot "hello! welcome to your new computer"
 bot "let's get going! "
@@ -51,11 +51,6 @@ ok
 
 bot "setting zsh as the user shell"
 chsh -s /bin/zsh
-ok
-
-# make dotfiles hidden
-running "hiding dotfiles"
-mv ~/dotfiles ~/.dotfiles
 ok
 
 bot "whooo, all set! "
