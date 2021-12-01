@@ -9,7 +9,7 @@ function bot(message) {
 }
 
 function running(message) {
-  console.log(chalk.cyan('⇒ '), message)
+  console.log(chalk.blue('⇒ '), message)
 }
 
 function action(message) {
@@ -17,11 +17,11 @@ function action(message) {
 }
 
 function warn(message) {
-  console.log(chalk.yellow('[warning] '), message)
+  console.log(chalk.yellow('[warning]: '), message)
 }
 
 function error(message) {
-  console.log(chalk.red('[error] '), message)
+  console.log(chalk.red('[error]: '), message)
 }
 
 
