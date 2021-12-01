@@ -63,7 +63,17 @@ export default async function brewInstall() {
 
   for (const brewPackage of packagesToInstall) {
     brewPackages.includes(brewPackage)
-      ? await installBrewPackages(brewPackage).catch(err => console.log(chalk.red('[error]: '), err.message))
-      : await installBrewCaskPackages(brewPackage).catch(err => console.log(chalk.red('[error]: '), err.message))
+      ? await installBrewPackages(brewPackage).catch(handleError)
+      : await installBrewCaskPackages(brewPackage).catch(handleError)
   }
+}
+
+function handleError(err) {
+  const { message } = err
+
+  if (message.match(/already an app/i)) {
+    return console.log(chalk.yellow('[warning]: '), message)
+  }
+  
+  return console.log(chalk.red('[error]: '), message)
 }
