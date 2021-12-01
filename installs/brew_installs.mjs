@@ -40,13 +40,11 @@ const brewCaskPackages = [
 ]
 
 async function installBrewPackages(packageName) {
-  // TODO: add try catch and save the error to print it later
-  await $`brew install ${packageName}`
+  return $`brew install ${packageName}`
 }
 
 async function installBrewCaskPackages(packageName) {
-  // TODO: add try catch and save the error to print it later
-  await $`brew install --cask ${packageName}`
+  return $`brew install --cask ${packageName}`
 }
 
 export default async function brewInstall() {
@@ -65,7 +63,7 @@ export default async function brewInstall() {
 
   for (const brewPackage of packagesToInstall) {
     brewPackages.includes(brewPackage)
-      ? await installBrewPackages(brewPackage)
-      : await installBrewCaskPackages(brewPackage)
+      ? await installBrewPackages(brewPackage).catch(err => console.log(chalk.red('[error]: '), err.message))
+      : await installBrewCaskPackages(brewPackage).catch(err => console.log(chalk.red('[error]: '), err.message))
   }
 }
