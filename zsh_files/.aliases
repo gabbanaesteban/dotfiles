@@ -5,7 +5,7 @@ alias sudo="sudo "
 
 # Actions
 alias 777='chmod 777'
-alias updatez='source ~/.zshrc'
+alias reloadz='source ~/.zshrc'
 
 # Edit
 alias edita='code ~/.aliases'
@@ -18,7 +18,6 @@ alias edith='code /etc/hosts'
 
 # Go to
 alias gos='cd ~/.ssh/'
-alias god='cd ~/.dotfiles'
 
 # git shortcuts
 alias g='git $1'
