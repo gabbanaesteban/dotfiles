@@ -38,14 +38,18 @@ bot "Hello! Let's get some stuff ready for your new computer"
 bot "Installing osx command line tools"
 xcode-select --install
 
+
 running "Installing brew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# TODO: add brew to path
 
 running "Downloading nvm"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh)"
 
+# TODO: source zshrc or bashrc 
 running "Installing the latest stable version of node"
-nvm install
+nvm install --lts
 
 running "Installing zx globally"
 npm i -g zx

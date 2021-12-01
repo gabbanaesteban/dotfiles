@@ -40,10 +40,12 @@ const brewCaskPackages = [
 ]
 
 async function installBrewPackages(packageName) {
+  // TODO: add try catch and save the error to print it later
   await $`brew install ${packageName}`
 }
 
 async function installBrewCaskPackages(packageName) {
+  // TODO: add try catch and save the error to print it later
   await $`brew install --cask ${packageName}`
 }
 

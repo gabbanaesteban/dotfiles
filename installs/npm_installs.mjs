@@ -20,6 +20,7 @@ export default async function npmInstall() {
   console.log("")
 
   for (const npmPackage of packagesToInstall) {
+  // TODO: add try catch and save the error to print it later
     await $`npm install ${npmPackage}`
   }
 }

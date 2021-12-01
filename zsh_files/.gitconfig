@@ -13,3 +13,25 @@
 
 [delta]
     navigate = true
+
+[alias]
+    ac = !git add -A && git commit -m
+    all = add --all
+    br = branch --all
+    ci = commit
+    cia = commit --amend
+    cim = commit -m
+    cl = clone
+    co = checkout
+    cob = checkout -b
+    ff = diff --color-words
+    ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+    lol = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s\"
+    ph = !git push origin $(git rev-parse --abbrev-ref HEAD)
+    pl = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+    st = status
+    take-ours = merge -s recursive -X ours
+    take-theirs = merge -s recursive -X theirs
+    undo = reset --hard
+    undo-last-commit = reset HEAD^
+    fap = fetch --all --prune
