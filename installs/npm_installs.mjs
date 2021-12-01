@@ -2,7 +2,7 @@
 
 const npmPackages = [
   'fast-cli',
-  'fkill',
+  'fkill-cli',
 ]
 
 export default async function npmInstall() {

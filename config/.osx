@@ -34,7 +34,5 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-for app in "Dock" "Finder" "Messages"; do
-	killall "${app}" &> /dev/null
-done
+killall Dock &> /dev/null
 echo "Done. Note that some of these changes require a logout/restart to take effect."
