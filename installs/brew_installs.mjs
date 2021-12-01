@@ -3,6 +3,7 @@
 const brewPackages = [
   //plugins
   "autojump",
+  "zsh-syntax-highlighting",
 
   //clis
   "awscli",

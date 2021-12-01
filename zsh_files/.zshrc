@@ -71,9 +71,7 @@ HIST_STAMPS="yyyy/mm/dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-autosuggestions
   autojump
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,3 +114,6 @@ export NVM_DIR="$HOME/.nvm"
 #### FIG ENV VARIABLES ####
 [[ -s ~/.fig/fig.sh ]] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+#syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
