@@ -39,15 +39,15 @@ bot "Installing osx command line tools"
 xcode-select --install
 
 
-running "Installing brew"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# cd $HOME
+# mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+# echo 'export PATH="$HOME/homebrew/bin:$PATH"' >> .zprofile
 
-# TODO: add brew to path
 
 running "Downloading nvm"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh)"
 
-# TODO: source zshrc or bashrc 
+# TODO: source zshrc or bashrc to use nvm
 running "Installing the latest stable version of node"
 nvm install --lts
 

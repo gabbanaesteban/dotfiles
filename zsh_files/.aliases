@@ -23,9 +23,9 @@ alias gos='cd ~/.ssh/'
 alias g='git $1'
 alias dbranch='git branch --merged | grep -v \* | xargs git branch -D'
 
-# ls aliases
-alias ll="ls -lha"
-alias ls='ls -FG'
+# Better unix
+alias cat='bat'
+alias ls='lsd'
 
 # File manager
 alias cp='cp -i'
