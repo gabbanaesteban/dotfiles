@@ -37,7 +37,8 @@ const brewCaskPackages = [
   "telegram",
   "brave-browser",
   "microsoft-teams",
-  "visual-studio-code"
+  "visual-studio-code",
+  "maccy"
 ]
 
 async function installBrewPackages(packageName) {
